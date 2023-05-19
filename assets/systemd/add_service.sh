@@ -6,7 +6,7 @@ MYAPP=ovs-exporter
 MYAPP_USER=openvswitch
 MYAPP_GROUP=openvswitch
 MYAPP_SERVICE=ovs-exporter
-MYAPP_BIN=/usr/sbin/ovs-exporter
+MYAPP_BIN=/usr/local/bin/ovs-exporter
 MYAPP_DESCRIPTION="Prometheus OVS Exporter"
 MYAPP_CONF="/etc/sysconfig/${MYAPP_SERVICE}"
 
