@@ -50,7 +50,6 @@ EOF
 
 systemctl daemon-reload
 systemctl is-active --quiet ${MYAPP_SERVICE} && systemctl stop ${MYAPP_SERVICE}
-setcap cap_sys_admin,cap_sys_nice,cap_dac_override+ep ${MYAPP_BIN} || true
 systemctl enable ${MYAPP_SERVICE}
 systemctl start ${MYAPP_SERVICE}
 if systemctl is-active --quiet ${MYAPP_SERVICE}; then
