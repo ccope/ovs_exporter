@@ -3,8 +3,8 @@ set -e
 set -x
 
 MYAPP=ovs-exporter
-MYAPP_USER=ovs_exporter
-MYAPP_GROUP=ovs_exporter
+MYAPP_USER=openvswitch
+MYAPP_GROUP=openvswitch
 MYAPP_SERVICE=ovs-exporter
 MYAPP_BIN=/usr/sbin/ovs-exporter
 MYAPP_DESCRIPTION="Prometheus OVS Exporter"
