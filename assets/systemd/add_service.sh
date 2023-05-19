@@ -15,18 +15,14 @@ if [ -f "./${MYAPP}" ]; then
   cp ./${MYAPP} ${MYAPP_BIN}
 fi
 
-if getent group ${MYAPP_GROUP}  >/dev/null; then
-  printf "INFO: ${MYAPP_GROUP} group already exists\n"
-else
-  printf "INFO: ${MYAPP_GROUP} group does not exist, creating ..."
-  groupadd --system ${MYAPP_GROUP}
+if ! getent group ${MYAPP_GROUP}  >/dev/null; then
+  printf "ERROR: ${MYAPP_GROUP} group does not exist!"
+  exit 1
 fi
 
-if getent passwd ${MYAPP_USER} >/dev/null; then
-  printf "INFO: ${MYAPP_USER} user already exists\n"
-else
-  printf "INFO: ${MYAPP_USER} group does not exist, creating ..."
-  useradd --system -d /var/lib/${MYAPP} -s /bin/bash -g ${MYAPP_GROUP} ${MYAPP_USER}
+if ! getent passwd ${MYAPP_USER} >/dev/null; then
+  printf "ERROR: ${MYAPP_USER} group does not exist!"
+  exit 1
 fi
 
 mkdir -p /var/lib/${MYAPP}
