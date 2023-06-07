@@ -15,8 +15,3 @@ license: "Apache"
 contents:
 - src: ./bin/linux-amd64/ovs-exporter
   dst: /usr/local/bin/ovs-exporter
-overrides:
-  rpm:
-    scripts:
-      preinstall: ./assets/systemd/add_service.sh
-      #postremove: ./scripts/postremove.sh
