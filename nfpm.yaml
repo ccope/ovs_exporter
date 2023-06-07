@@ -1,0 +1,22 @@
+name: "ovs-exporter"
+arch: "amd64"
+platform: "linux"
+version: "v1.0.5-crusoe"
+section: "default"
+priority: "extra"
+provides:
+- ovs-exporter
+maintainer: "Cam Cope <ccope@crusoeenergy.com>"
+description: |
+  OpenVSwitch metrics exporter for prometheus
+vendor: "Greenpau"
+homepage: "http://github.com/greenpau/ovs-exporter"
+license: "Apache"
+contents:
+- src: ./bin/linux-amd64/ovs-exporter
+  dst: /usr/local/bin/ovs-exporter
+overrides:
+  rpm:
+    scripts:
+      preinstall: ./assets/systemd/add_service.sh
+      #postremove: ./scripts/postremove.sh
