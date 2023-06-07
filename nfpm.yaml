@@ -15,3 +15,7 @@ license: "Apache"
 contents:
 - src: ./bin/linux-amd64/ovs-exporter
   dst: /usr/local/bin/ovs-exporter
+  file_info:
+    mode: 0750
+    owner: root
+    group: openvswitch
