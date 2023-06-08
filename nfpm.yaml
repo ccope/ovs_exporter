@@ -1,7 +1,7 @@
 name: "ovs-exporter"
 arch: "amd64"
 platform: "linux"
-version: "v1.0.5-crusoe"
+version: "v1.0.5-crusoe1"
 section: "default"
 priority: "extra"
 provides:
